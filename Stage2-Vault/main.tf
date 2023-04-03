@@ -33,7 +33,7 @@ resource "vault_aws_secret_backend" "aws" {
 
 resource "vault_aws_secret_backend_role" "role" {
   for_each        = { for index, account in data.aws_organizations_organizational_unit_child_accounts.accounts.accounts: account.id => account }
-  backend         = "aws-demo"
+  backend         = vault_aws_secret_backend.aws.path
   name            = "aws-demo-${each.value.name}"
   credential_type = "assumed_role"
   default_sts_ttl = 900
