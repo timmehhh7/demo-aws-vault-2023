@@ -6,3 +6,4 @@ variable "accounts" {}
 variable "users" {}
 variable "root_user_email" {}
 variable "mailbox_domain" {}
+variable "vault_account" {}
