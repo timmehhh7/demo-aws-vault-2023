@@ -16,16 +16,10 @@ Retrieve credentials from Vault:
 unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
 vault token create -ttl=1h -policy=aws-demo
 export VAULT_TOKEN=<>
-vault write aws/sts/aws-demo-moon-of-vega ttl=15m
+source set_creds_moon_of_vega
 ```
 
-Export the following Environment Variables from the results from Vault:
-```shell
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_SESSION_TOKEN
-```
-
+Verify identity and run command in CLI:
 ```shell
 aws sts get-caller-identity
 aws ec2 describe-vpcs --region=us-east-1
