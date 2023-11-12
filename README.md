@@ -14,7 +14,7 @@ aws-demo-planet-spaceball
 Retrieve credentials from Vault:
 ```shell
 unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
-vault token create -ttl=1h -policy=aws-demo
+vault token create -ttl=30m -policy=aws-demo
 export VAULT_TOKEN=<>
 source set_creds_moon_of_vega
 ```
